@@ -100,6 +100,22 @@ class SystemBot(JabberBot):
 	return 'mpc sleepmode ENABLED.\nSleep well!'
 
     @botcmd
+    def wturak(self, mess, args):
+	"""Wake turak"""
+	mpcsleep_pipe = os.popen('etherwake 00:22:15:85:25:09','r')
+	mpcsleep_pipe.close()
+
+	return 'Waking turak'
+
+    @botcmd
+    def wradio(self, mess, args):
+	"""Wake radiobox"""
+	mpcsleep_pipe = os.popen('etherwake 00:1f:c6:b5:f0:a1','r')
+	mpcsleep_pipe.close()
+
+	return 'Waking radiobox'
+
+    @botcmd
     def wakeup(self, mess, args):
 	"""Wakeup at given time"""
 	wakeup_pipe = os.popen('at -f scripts/wakeup.sh ' + args, 'r')

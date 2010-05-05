@@ -1,0 +1,7 @@
+#!/bin/bash
+
+HOSTS=( \
+"00:22:15:85:25:09;turak" \
+"00:1f:c6:b5:f0:a1;radiobox" \
+"00:26:18:87:ae:12;silver" \
+)

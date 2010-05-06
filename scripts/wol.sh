@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#ETHERWAKE=$(which etherwake)
+. config/wol.cfg
 
 if [ "$1" == "" ];
 then
@@ -10,7 +10,7 @@ then
 	while read MAC NAME
 	do
 		echo -e "$NAME "
-	done < config/wol.cfg
+	done < config/wol-hosts.cfg
 else
 	bool=0
 
@@ -20,10 +20,10 @@ else
 		if [ "$1" == "$NAME" ];
 		then
 			echo -e "Waking $NAME ($MAC)"
-			etherwake $MAC
+			etherwake $OPTS $MAC
 			bool=1
 		fi
-	done < config/wol.cfg
+	done < config/wol-hosts.cfg
 
 	if [ $bool -eq 0 ];
 	then

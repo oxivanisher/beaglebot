@@ -139,7 +139,7 @@ class SystemBot(JabberBot):
         return
 
 config = RawConfigParser()
-config.read(['/etc/beaglebot.cfg','beaglebot.cfg'])
+config.read(['/etc/beaglebot.cfg','config/beaglebot.cfg'])
 
 bot = SystemBot(config.get('systembot','username'),
                 config.get('systembot','password'))

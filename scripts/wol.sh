@@ -1,7 +1,5 @@
 #!/bin/bash
 
-. config/wol.cfg
-
 if [ "$1" == "" ];
 then
 	echo -e "hosts available:"
@@ -20,6 +18,7 @@ else
 		if [ "$1" == "$NAME" ];
 		then
 			echo -e "Waking $NAME ($MAC)"
+			. config/wol.cfg
 			etherwake $OPTS $MAC
 			bool=1
 		fi

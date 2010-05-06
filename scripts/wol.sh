@@ -4,7 +4,7 @@ ETHERWAKE=$(which etherwake)
 
 if [ "$1" == "" ];
 then
-	echo -e "hosts available:\n"
+	echo -e "hosts available:"
 
 	IFS=";"
 	while read MAC NAME

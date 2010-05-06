@@ -10,7 +10,7 @@ then
 	while read MAC NAME
 	do
 		echo -e "$NAME "
-	done < scripts/wol.cfg
+	done < config/wol.cfg
 else
 	bool=0
 
@@ -23,7 +23,7 @@ else
 			$ETHERWAKE $MAC
 			bool=1
 		fi
-	done < scripts/wol.cfg
+	done < config/wol.cfg
 
 	if [ $bool -eq 0 ];
 	then

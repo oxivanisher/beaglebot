@@ -102,7 +102,7 @@ class SystemBot(JabberBot):
     @botcmd
     def wake(self, mess, args):
 	"""Wake on Lan"""
-	wake_pipe = os.popen('scripts/wol.sh','r')
+	wake_pipe = os.popen('scripts/wol.sh ' + args,'r')
 	wake = wake_pipe.read().strip()
 	wake_pipe.close()
 

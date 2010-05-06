@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ETHERWAKE=$(which etherwake)
+#ETHERWAKE=$(which etherwake)
 
 if [ "$1" == "" ];
 then
@@ -20,7 +20,7 @@ else
 		if [ "$1" == "$NAME" ];
 		then
 			echo -e "Waking $NAME ($MAC)"
-			$ETHERWAKE $MAC
+			etherwake $MAC
 			bool=1
 		fi
 	done < config/wol.cfg
